@@ -7,7 +7,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
+
 function Login() {
+  const server = "http://35.180.135.186:3000";
+  const googleId = "445131528162-l6a7p0s8829srhi3gc2sa5vunsm34pp7.apps.googleusercontent.com";
+  
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -23,10 +28,10 @@ function Login() {
 
   async function handleLogin(event) {
     event.preventDefault();
-
+   
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        `${server}/login`,
         {
           email,
           password,
@@ -50,7 +55,7 @@ function Login() {
   async function handleGoogleLoginSuccess(credentialResponse) {
     try {
       const response = await axios.post(
-        "http://localhost:3000/google-login",
+        `${server}/google-login`,
         {
           token: credentialResponse.credential,
         },
@@ -74,6 +79,8 @@ function Login() {
   function handleGoogleLoginError() {
     setErrorMessage("Google login failed");
   }
+
+
 
   return (
     <div>
@@ -113,7 +120,7 @@ function Login() {
         </div>
       </Form>
       <div className="google-login">
-        <GoogleOAuthProvider clientId="445131528162-l6a7p0s8829srhi3gc2sa5vunsm34pp7.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId={googleId}>
           <GoogleLogin
             onSuccess={handleGoogleLoginSuccess}
             onError={handleGoogleLoginError}

@@ -6,7 +6,10 @@ import Row from "react-bootstrap/Row";
 import "./SignUp.css"
 import { useState } from "react";
 
+
 function SignUp() {
+  const server = "35.180.135.186:3000";
+
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [username, setUsername] = useState("");
@@ -46,8 +49,9 @@ function SignUp() {
   async function handleSubmitAsync(event) {
     event.preventDefault();
 
+   
     try {
-      const response = await fetch("http://localhost:3000/signup", {
+      const response = await fetch(`${server}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
