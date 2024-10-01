@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 
 function useFetchUserInfo() {
+  const server = "35.180.135.186:3000";
+
+
   const [userInfo, setUserInfo] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+
+  
   useEffect(() => {
     async function fetchUserInfo() {
       try {
-        const response = await fetch("http://localhost:3000/myinfo", {
+        const response = await fetch(`${server}/myinfo`, {
           method: "GET",
           credentials: "include",
         });
