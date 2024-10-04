@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 function SignUp() {
-  const server = "35.180.135.186:3000";
+  const server = "https://savourymealserver.work.gd";
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
