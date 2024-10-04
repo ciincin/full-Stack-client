@@ -4,10 +4,10 @@ function Footer() {
   return (
     <div className="footer-wrapper">
       <p>2024 - Cinthya Redondo Soto. All rights reserved.</p>
-      <p>
-        <a href="https://www.linkedin.com/in/cinthyars/">LinkedIn</a>{" "}
-        <a href="https://github.com/ciincin">Github</a>
-      </p>
+      <div className="contact-wrapper">
+          <a className="social" href="https://www.linkedin.com/in/cinthyars/">LinkedIn</a>
+          <a className="social" href="https://github.com/ciincin">Github</a>
+      </div>
       <p>
         This website is intended solely for educational purposes. It is a
         project created by Cinthya Redondo Soto, full-stack developer to

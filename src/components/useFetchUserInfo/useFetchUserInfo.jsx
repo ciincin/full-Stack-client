@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function useFetchUserInfo() {
-  const server = "35.180.135.186:3000";
+  const server = "https://savourymealserver.work.gd";
 
 
   const [userInfo, setUserInfo] = useState(null);

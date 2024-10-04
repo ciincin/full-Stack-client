@@ -1,8 +1,81 @@
-.form-wrapper{
-    margin: 1rem;
+@import url("../../index.css");
+
+.login-wrapper {
+    display: flex;
+    flex-direction: row;
 }
 
-.register{
-    margin-top: 1rem;
-    font-size: 14px;
+.img-wrapper img{
+    width: 40vw;
+    max-height: 100vh; /* Limita la altura máxima al 100% del viewport */
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones y se recorte si es necesario */
 }
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+   
+    align-self: center;
+}
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+   
+  
+    padding: 3rem;
+    border-radius: 1rem;
+    background-color: var(--brown-logo);
+    color: var(--gold);
+
+}
+
+.label-login {
+    font-weight: 500;
+    font-size: 1.25rem;
+   
+}
+
+.input-style {
+    width: 20rem !important;
+}
+.input-style:focus {
+    outline: none !important; /* Elimina el outline por defecto */
+    border: 2px solid var(--orange-logo)!important; /* Cambia el borde al color que prefieras */
+    box-shadow: 0 0 5px var(--orange-logo)!important; /* Añade un efecto de sombra en el color deseado */
+}
+
+.btn-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-style {
+    background-color: var(--orange-logo) !important;
+    border-radius: 1rem !important;
+    border:1px solid rgb(206, 134, 0) !important;
+    width: fit-content;
+    padding: 0.5rem 2rem !important;
+    color: var(--beige) !important;
+    font-weight: 500 !important;
+}
+
+.google-login {
+    width: fit-content !important;
+    padding-top: 1rem;
+}
+
+.register {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.register-a {
+    text-decoration: none;
+    color: var(--beige);
+}
+
+.register-a:hover {
+    text-decoration: underline;
+}
+

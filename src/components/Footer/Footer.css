@@ -1,6 +1,25 @@
+@import url("../../index.css");
 .footer-wrapper{
     padding: 1rem;
     margin-top: 1rem;
     text-align: center;
-    background-color: azure;
+    background-color: var(--carolina-blue);
+    color: var( --dark-slate-gray);
+    font-weight: 500;
+}
+
+.contact-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin:1rem;
+}
+
+.social{
+    color: var(--beige);
+    text-decoration: none;
+}
+
+.social:hover{
+    text-decoration: underline;
 }
