@@ -1,25 +1,16 @@
 @import url("../../index.css");
-.footer-wrapper{
-    padding: 1rem;
-    margin-top: 1rem;
-    text-align: center;
-    background-color: var(--carolina-blue);
-    color: var( --dark-slate-gray);
-    font-weight: 500;
-}
-
-.contact-wrapper{
+footer{
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin:1rem;
+    align-items: center;
+    gap:1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--ligth-grey);
+    color: var(--dark-slate-gray);
+    font-weight: 500;
+    flex-shrink: 0;
 }
 
-.social{
-    color: var(--beige);
-    text-decoration: none;
+.social img{
+    width: 25px;
 }
 
-.social:hover{
-    text-decoration: underline;
-}
