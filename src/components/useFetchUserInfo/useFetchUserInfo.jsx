@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function useFetchUserInfo() {
-  const server = "https://savourymealserver.work.gd";
+  const server = import.meta.env.VITE_SERVER_URL;
 
 
   const [userInfo, setUserInfo] = useState(null);
