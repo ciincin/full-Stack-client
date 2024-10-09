@@ -1,3 +1,14 @@
-.profile-wrapper{
-    margin:1rem;
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    /* Coloca los elementos en columna */
+    min-height: 100vh;
+    /* Asegúrate de que ocupe al menos toda la altura de la ventana */
+}
+
+.profile-wrapper {
+    flex: 1;
+    /* Ocupa el espacio restante entre el Navbar y el Footer */
+    padding: 20px;
+    /* Espaciado para el contenido */
 }

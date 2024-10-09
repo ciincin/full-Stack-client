@@ -24,7 +24,16 @@ html, body {
   min-height: 100vh;
   
 }
+nav {
+  flex: 0 0 auto; /* No crece ni se encoge, ocupa solo el espacio necesario */
+}
 
 .main-content {
-  flex: 1;
+  flex: 1 0 auto; /* Ocupa el espacio restante */
+
+}
+
+footer {
+  flex: 0 0 auto; /* No crece ni se encoge, ocupa solo el espacio necesario */
+  
 }
