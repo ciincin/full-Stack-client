@@ -1,14 +1,14 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
 function Login() {
-  const server = "https://savourymealserver.work.gd";
+  const server = import.meta.env.VITE_SERVER_URL;
   const googleId =
     "445131528162-l6a7p0s8829srhi3gc2sa5vunsm34pp7.apps.googleusercontent.com";
 
@@ -82,57 +82,61 @@ function Login() {
   return (
     <div className="login-wrapper">
       <div className="img-wrapper">
-        <img src="src/assets/background/cake.jpg"/>
+        <img src="src/assets/background/cake.jpg" />
       </div>
-      <div className="form-container">
-        <Form className="form-wrapper" onSubmit={handleLogin}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className="label-login">Email address</Form.Label>
-            <Form.Control
-              className="input-style"
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={handleSetEmail}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label className="label-login">Password</Form.Label>
-            <Form.Control
-              className="input-style"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={handleSetPassword}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Remember me" />
-          </Form.Group>
-          <div className="btn-wrapper">
-            <Button variant="primary" type="submit" className="btn-style">
-              Submit
-            </Button>
-            <div className="google-login">
-              <GoogleOAuthProvider clientId={googleId}>
-                <GoogleLogin
-                  className="input-style"
-                  onSuccess={handleGoogleLoginSuccess}
-                  onError={handleGoogleLoginError}
-                />
-              </GoogleOAuthProvider>
-            </div>
+
+      <Form className="form-wrapper" onSubmit={handleLogin}>
+        <Form.Group className="mb-3-wrapper" controlId="formBasicEmail">
+          <div className="login-title-wrapper">
+            <img className="logo-image" src="src/assets/logo/logo-1200x1200-px.png" alt="logo" />
+            <Form.Label className="label-login">Login</Form.Label>
+            <Form.Text className="text-muted">
+              Please, enter your email and password.
+            </Form.Text>
           </div>
-          <div className="register">
-            Are you not registered?{" "}
-            <a className="register-a" href="/signup">
-              Register now
-            </a>
+          <Form.Control
+            className="input-style"
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={handleSetEmail}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Control
+            className="input-style"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={handleSetPassword}
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Remember me" />
+        </Form.Group>
+        <div className="btn-wrapper">
+          <Button variant="primary" type="submit" className="btn-style">
+            Submit
+          </Button>
+          <div className="google-login">
+            <GoogleOAuthProvider clientId={googleId}>
+              <GoogleLogin
+                className="input-style"
+                onSuccess={handleGoogleLoginSuccess}
+                onError={handleGoogleLoginError}
+              />
+            </GoogleOAuthProvider>
           </div>
-        </Form>
-      </div>
+        </div>
+        <div className="register">
+          Are you not registered?{" "}
+          <a className="register-a" href="/signup">
+            Register now
+          </a>
+        </div>
+      </Form>
 
       {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
     </div>
