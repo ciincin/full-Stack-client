@@ -1,3 +1,66 @@
-.signup-wrapper-message{
-    margin: 1.25rem;
+@import url("../../index.css");
+
+.signup-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 20vw;
+
+}
+
+.signup-img-wrapper img {
+    width: 40vw;
+    height: 100vh;
+    /* Limita la altura máxima al 100% del viewport */
+    object-fit: cover;
+    /* Asegura que la imagen mantenga sus proporciones y se recorte si es necesario */
+}
+
+.signup-form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20rem;
+    
+}
+
+.label-signup{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.name-wrapper{
+    display: flex;
+    gap:1.5rem;
+}
+
+.name-wrapper .form-group {
+    flex: 1; /* Permite que los grupos de formularios ocupen el mismo espacio */
+}
+
+.signup-form-wrapper .form-control {
+    width: 100%; /* Asegura que el input ocupe el 100% del ancho disponible */
+}
+
+.signup-form-wrapper .form-group {
+    flex: 1; /* Permite que cada grupo de formularios ocupe el mismo espacio */
+}
+
+.username-signup{
+    padding-top: 1rem;
+}
+
+.btn-register{
+    background-color: var(--orange-logo) !important;
+    border-radius: 1rem !important;
+    border: 1px solid rgb(206, 134, 0) !important;
+    padding: 0.5rem 2rem !important;
+    color: var(--beige) !important;
+    font-weight: 600 !important;
+}
+
+.btn-register:hover{
+    background-color: rgb(209, 134, 0) !important;
 }

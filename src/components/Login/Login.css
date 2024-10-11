@@ -78,6 +78,9 @@
     font-weight: 500 !important;
 }
 
+.btn-style:hover{
+    background-color: rgb(209, 134, 0) !important;
+}
 .google-login {
     width: fit-content !important;
     padding-top: 1rem;

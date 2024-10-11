@@ -3,19 +3,18 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Row from "react-bootstrap/Row";
-import "./SignUp.css"
+import "./SignUp.css";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const server = "https://savourymealserver.work.gd";
-
+  const server = import.meta.env.VITE_SERVER_URL;
+  const navigate = useNavigate();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [image, setimage] = useState("");
   const [terms, setTerms] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -39,9 +38,6 @@ function SignUp() {
     setPassword(event.target.value);
   }
 
-  function handleSetimage(event) {
-    setimage(event.target.value);
-  }
   function handleSetTerms(event) {
     setTerms(event.target.checked);
   }
@@ -49,7 +45,6 @@ function SignUp() {
   async function handleSubmitAsync(event) {
     event.preventDefault();
 
-   
     try {
       const response = await fetch(`${server}/signup`, {
         method: "POST",
@@ -62,14 +57,13 @@ function SignUp() {
           username,
           email,
           password,
-          image,
         }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("Signup successful");
+        navigate("/");
       } else {
         setMessage(`Signup failled: ${data.msg}`);
       }
@@ -80,42 +74,45 @@ function SignUp() {
   }
 
   return (
-    <div className="signup-wrapper-message">
-      <div>
+    <div className="signup-wrapper">
+      <div className="signup-form-wrapper">
         <Form noValidate onSubmit={handleSubmitAsync}>
+          <Form.Label className="label-signup">Sign up</Form.Label>
           <Row className="mb-3">
-            <Form.Group
-              as={Col}
-              md="4"
-              controlId="validationFormik101"
-              className="position-relative"
-            >
-              <Form.Label>First name</Form.Label>
-              <Form.Control
-                type="text"
-                name="firstname"
-                placeholder="First name"
-                value={firstname}
-                onChange={handleSetFirstname}
-              />
-            </Form.Group>
-            <Form.Group
-              as={Col}
-              md="4"
-              controlId="validationFormik102"
-              className="position-relative"
-            >
-              <Form.Label>Last name</Form.Label>
-              <Form.Control
-                type="text"
-                name="lastname"
-                placeholder="Last name"
-                value={lastname}
-                onChange={handleSetLastname}
-              />
-            </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationFormikUsername2">
-              <Form.Label>Username</Form.Label>
+            <div className="name-wrapper">
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="validationFormik101"
+                className="position-relative form-group"
+              >
+                <Form.Label>First name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="firstname"
+                  placeholder="First name"
+                  value={firstname}
+                  onChange={handleSetFirstname}
+                />
+              </Form.Group>
+              <Form.Group
+                as={Col}
+                md="4"
+                controlId="validationFormik102"
+                className="position-relative form-group"
+              >
+                <Form.Label>Last name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="lastname"
+                  placeholder="Last name"
+                  value={lastname}
+                  onChange={handleSetLastname}
+                />
+              </Form.Group>
+            </div>
+            <Form.Group as={Col} md="4" controlId="validationFormikUsername2" className="position-relative form-group">
+              <Form.Label className="username-signup">Username</Form.Label>
               <InputGroup hasValidation>
                 <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                 <Form.Control
@@ -134,7 +131,7 @@ function SignUp() {
               as={Col}
               md="6"
               controlId="validationFormik103"
-              className="position-relative"
+              className="position-relative form-group"
             >
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -149,7 +146,7 @@ function SignUp() {
               as={Col}
               md="3"
               controlId="validationFormik104"
-              className="position-relative"
+              className="position-relative form-group"
             >
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -162,15 +159,6 @@ function SignUp() {
             </Form.Group>
           </Row>
           <Form.Group className="position-relative mb-3">
-            <Form.Label>Image</Form.Label>
-            <Form.Control
-              type="file"
-              name="file"
-              value={image}
-              onChange={handleSetimage}
-            />
-          </Form.Group>
-          <Form.Group className="position-relative mb-3">
             <Form.Check
               required
               name="terms"
@@ -182,8 +170,11 @@ function SignUp() {
               feedbackTooltip
             />
           </Form.Group>
-          <Button type="submit">Register</Button>
+          <Button className="btn-register" type="submit">Register</Button>
         </Form>
+      </div>
+      <div className="signup-img-wrapper">
+        <img src="src/assets/background/photo-signup.jpg" />
       </div>
       {message && <p>{message}</p>}
     </div>
