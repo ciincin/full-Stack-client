@@ -174,7 +174,7 @@ function SignUp() {
         </Form>
       </div>
       <div className="signup-img-wrapper">
-        <img src="public/assets/background/photo-signup.jpg" />
+        <img src="assets/background/photo-signup.jpg" />
       </div>
       {message && <p>{message}</p>}
     </div>
