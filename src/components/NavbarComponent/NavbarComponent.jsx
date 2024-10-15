@@ -9,7 +9,7 @@ function NavbarComponent() {
       <Navbar expand="lg" className="custom-navbar">
         <Container>
           <Navbar.Brand href="#home">
-            <img src="src/assets/logo/logo-navbar.png" width={200} alt="logo" />
+            <img src="public/assets/logo/logo-navbar.png" width={200} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
