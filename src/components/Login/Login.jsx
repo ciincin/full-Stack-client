@@ -82,13 +82,13 @@ function Login() {
   return (
     <div className="login-wrapper">
       <div className="img-wrapper">
-        <img src="public/assets/background/cake.jpg" />
+        <img src="assets/background/cake.jpg" />
       </div>
 
       <Form className="form-wrapper" onSubmit={handleLogin}>
         <Form.Group className="mb-3-wrapper" controlId="formBasicEmail">
           <div className="login-title-wrapper">
-            <img className="logo-image" src="public/assets/logo/logo-1200x1200-px.png" alt="logo" />
+            <img className="logo-image" src="assets/logo/logo-1200x1200-px.png" alt="logo" />
             <Form.Label className="label-login">Login</Form.Label>
             <Form.Text className="text-muted">
               Please, enter your email and password.
