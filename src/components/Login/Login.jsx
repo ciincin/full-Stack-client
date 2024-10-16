@@ -9,7 +9,7 @@ import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
 function Login() {
   const server = import.meta.env.VITE_SERVER_URL;
-  
+
   const googleId =
     "445131528162-l6a7p0s8829srhi3gc2sa5vunsm34pp7.apps.googleusercontent.com";
 
@@ -30,7 +30,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      console.log(server)
+      console.log(server);
       const response = await axios.post(
         `${server}/login`,
         {
@@ -44,16 +44,14 @@ function Login() {
 
       if (!response || !response.data) {
         setErrorMessage("login failed: data no received");
+      } else {
+        setTimeout(() => {
+          navigate("/profile");
+        }, 1000);
       }
     } catch (error) {
       setErrorMessage(error.response?.data?.msg || "An error occurred");
     }
-
-    return redirectToProfile();
-  }
-
-  function redirectToProfile(){
-    navigate("/profile");
   }
 
   async function handleGoogleLoginSuccess(credentialResponse) {
@@ -84,11 +82,10 @@ function Login() {
     setErrorMessage("Google login failed");
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(server);
-    console.log("holaaaaaaaaaaa")
-    
-  },[])
+    console.log("holaaaaaaaaaaa");
+  }, []);
   return (
     <div className="login-wrapper">
       <div className="img-wrapper">
@@ -98,7 +95,11 @@ function Login() {
       <Form className="form-wrapper" onSubmit={handleLogin}>
         <Form.Group className="mb-3-wrapper" controlId="formBasicEmail">
           <div className="login-title-wrapper">
-            <img className="logo-image" src="assets/logo/logo-1200x1200-px.png" alt="logo" />
+            <img
+              className="logo-image"
+              src="assets/logo/logo-1200x1200-px.png"
+              alt="logo"
+            />
             <Form.Label className="label-login">Login.</Form.Label>
             <Form.Text className="text-muted">
               Please, enter your email and password.
