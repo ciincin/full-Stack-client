@@ -44,14 +44,19 @@ function Login() {
 
       if (!response || !response.data) {
         setErrorMessage("login failed: data no received");
-      } else {
-        setTimeout(() => {
-          navigate("/profile");
-        }, 1000);
       }
     } catch (error) {
       setErrorMessage(error.response?.data?.msg || "An error occurred");
     }
+
+    return prueba()
+  }
+
+  function prueba(){
+    console.log("test")
+    setTimeout(() => {
+      navigate("/profile");
+    }, 8000);
   }
 
   async function handleGoogleLoginSuccess(credentialResponse) {
