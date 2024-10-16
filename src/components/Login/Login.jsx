@@ -32,7 +32,7 @@ function Login() {
     try {
       console.log(server)
       const response = await axios.post(
-        `/login`,
+        `${server}/login`,
         {
           email,
           password,
