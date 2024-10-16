@@ -42,17 +42,18 @@ function Login() {
         }
       );
 
-      if (response && response.data) {
-        // Go to profile web
-        navigate("/profile");
-      } else {
+      if (!response || !response.data) {
         setErrorMessage("login failed: data no received");
       }
     } catch (error) {
       setErrorMessage(error.response?.data?.msg || "An error occurred");
     }
 
-    return 
+    return redirectToProfile();
+  }
+
+  function redirectToProfile(){
+    navigate("/profile");
   }
 
   async function handleGoogleLoginSuccess(credentialResponse) {
