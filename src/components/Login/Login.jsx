@@ -51,6 +51,8 @@ function Login() {
     } catch (error) {
       setErrorMessage(error.response?.data?.msg || "An error occurred");
     }
+
+    return 
   }
 
   async function handleGoogleLoginSuccess(credentialResponse) {
