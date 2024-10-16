@@ -30,6 +30,7 @@ function Login() {
     event.preventDefault();
 
     try {
+      console.log(server)
       const response = await axios.post(
         `${server}/login`,
         {
