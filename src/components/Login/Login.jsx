@@ -9,6 +9,11 @@ import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 
 function Login() {
   const server = import.meta.env.VITE_SERVER_URL;
+  useEffect(()=>{
+    console.log(server);
+    console.log("holaaaaaaaaaaa")
+    
+  },[])
   const googleId =
     "445131528162-l6a7p0s8829srhi3gc2sa5vunsm34pp7.apps.googleusercontent.com";
 
@@ -89,7 +94,7 @@ function Login() {
         <Form.Group className="mb-3-wrapper" controlId="formBasicEmail">
           <div className="login-title-wrapper">
             <img className="logo-image" src="assets/logo/logo-1200x1200-px.png" alt="logo" />
-            <Form.Label className="label-login">Login</Form.Label>
+            <Form.Label className="label-login">Login.</Form.Label>
             <Form.Text className="text-muted">
               Please, enter your email and password.
             </Form.Text>
