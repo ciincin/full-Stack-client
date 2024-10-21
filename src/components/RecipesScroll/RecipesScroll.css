@@ -1,0 +1,18 @@
+@import url("../../index.css");
+.recipes-scroll-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.recipe-scroll-card {
+    width: fit-content;
+background-color: var(--beige);
+padding: 1rem;
+}
+
+.recipe-scroll-card-img{
+    width: 30vw;
+}
