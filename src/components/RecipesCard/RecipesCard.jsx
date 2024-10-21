@@ -8,6 +8,8 @@ function RecipesCard() {
   const [recipesByMealType, setRecipesByMealType] = useState({});
   const sliderRefs = useRef({});
 
+  const visibleCardsCount = 8;
+
   useEffect(() => {
     if (recipes.length > 0) {
       const groupedRecipes = {};
@@ -54,12 +56,14 @@ function RecipesCard() {
             <div key={index} className="meal-type-section">
               <h2 className="meal-type-title-style">{mealType}</h2>
               <div className="slider-wrapper">
-                <button
-                  className="scroll-button left"
-                  onClick={() => handleScrollLeft(mealType)}
-                >
-                  ◀
-                </button>
+                {recipesByMealType[mealType].length > visibleCardsCount && (
+                  <button
+                    className="scroll-button left"
+                    onClick={() => handleScrollLeft(mealType)}
+                  >
+                    ◀
+                  </button>
+                )}
                 <div
                   className="recipe-slider"
                   ref={(el) => (sliderRefs.current[mealType] = el)}
@@ -71,12 +75,14 @@ function RecipesCard() {
                     </div>
                   ))}
                 </div>
-                <button
-                  className="scroll-button right"
-                  onClick={() => handleScrollRight(mealType)}
-                >
-                  ▶
-                </button>
+                {recipesByMealType[mealType].length > visibleCardsCount && (
+                  <button
+                    className="scroll-button right"
+                    onClick={() => handleScrollRight(mealType)}
+                  >
+                    ▶
+                  </button>
+                )}
               </div>
             </div>
           ))}
