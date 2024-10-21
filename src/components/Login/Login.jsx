@@ -45,7 +45,7 @@ function Login() {
       if (!response || !response.data) {
         setErrorMessage("login failed: data no received");
       } else {
-        
+        navigate("/profile")
       }
     } catch (error) {
       setErrorMessage(error.response?.data?.msg || "An error occurred");

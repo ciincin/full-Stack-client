@@ -1,12 +1,57 @@
-.recipes-scroll-wrapper{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+.recipes-wrapper{
+    padding: 1rem;
 }
-.recipe-wrapper{
-    
+
+.meal-type-title-style{
+    padding: 0 1rem;
+    margin: 1rem 0;
+    color: var(--orange-logo);
+    font-weight: 600;
+    border-radius: 1rem;
 }
-.img-recipes{
-    width: 20rem;
+.slider-wrapper {
+    display: flex;
+    align-items: center; /* Alinear los botones y el slider verticalmente */
+    overflow: hidden; /* Para ocultar el desbordamiento */
+   
 }
+
+.recipe-slider {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    padding: 1rem;
+
+}
+
+
+.recipe-card {
+    flex: 0 0 auto;
+    width: 200px;
+    background-color: var(--beige);
+    border-radius: 10px;
+    cursor: pointer;
+   
+}
+.recipe-name-style{
+    height: 60px;
+    margin: 0.5rem;
+    color: var(--brown-logo);
+}
+
+.recipe-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.scroll-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.75rem;
+    color: var(--orange-logo);
+  
+}
+
+

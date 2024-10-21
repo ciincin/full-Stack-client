@@ -18,13 +18,13 @@ function NavbarComponent() {
                 Home
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/signup">
-                My recipes
+                Recipes
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/signup">
-                Pictures
+                Favorites
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/signup">
-                Sign up
+                Share a recipe
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

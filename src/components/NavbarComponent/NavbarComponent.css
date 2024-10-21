@@ -1,5 +1,11 @@
 @import url("../../index.css");
 
+nav{
+    position:sticky;
+    top: 0;
+    overflow: hidden;
+}
+
 .custom-navbar {
     background-color: var(--beige);
     border-radius: 75px;

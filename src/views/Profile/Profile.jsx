@@ -28,7 +28,7 @@ function Profile() {
     <div className="profile-container">
       <NavbarComponent />
       <div className="profile-wrapper">
-        {userInfo && <h2>Welcome back, {userInfo.username}!</h2>}
+        {userInfo && <h2>Welcome back, {userInfo.username} !</h2>}
       </div>
      <RecipesCard/>
       <Footer />

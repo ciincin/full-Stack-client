@@ -6,6 +6,9 @@
   --carolina-blue: #7fb3d5;
   --ligth-grey: #d3d3d3;
   --gold: #f4d03f;
+  --beige-background: #FBFBEF;
+  --orange-title: rgba(239, 155, 29, 0.671);
+
 }
 
 html, body {
@@ -15,14 +18,14 @@ html, body {
   font-style: normal;
   margin: 0;
   height: 100%;
-  
+
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  
+  background-color: var(--beige-background);
 }
 nav {
   flex: 0 0 auto; /* No crece ni se encoge, ocupa solo el espacio necesario */
