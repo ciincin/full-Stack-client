@@ -4,6 +4,7 @@ import "./Profile.css";
 import Footer from "../../components/Footer/Footer";
 import RecipesCard from "../../components/RecipesCard/RecipesCard";
 import RecipesScroll from "../../components/RecipesScroll/RecipesScroll"
+import SearchBox from "../../components/SearchBox/SearchBox";
 function Profile() {
   const { userInfo, error, loading } = useFetchUserInfo();
 
@@ -30,6 +31,7 @@ function Profile() {
       <div className="profile-wrapper">
         {userInfo && <h2>Welcome back, {userInfo.username} !</h2>}
       </div>
+      <SearchBox/>
      <RecipesScroll/>
       <Footer />
     </div>

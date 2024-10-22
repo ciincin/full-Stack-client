@@ -9,11 +9,13 @@ function RecipesCard() {
     <div className="recipes-scroll-wrapper">
       {recipes && recipes.map((recipe, index) =>
       <div key={index} className="recipe-scroll-card">
-        <h3>{recipe.name}</h3>
+        <h3 className="recipe-scroll-title">{recipe.name}</h3>
         <img className="recipe-scroll-card-img" src={recipe.image} alt={recipe.name}/>
-        <p>{recipe.rating} ★ ({recipe.reviewCount})</p>
-        <p>{recipe.reviewCount}</p>
-        <i class="bi bi-zoom-out"></i>
+        <div className="recipes-scroll-info">
+          <p className="recipes-scroll-info-p">{recipe.rating} ★ ({recipe.reviewCount})</p>
+          <p className="recipes-scroll-info-p"><i className="bi bi-clock"></i> {recipe.prepTimeMinutes + recipe.cookTimeMinutes} min </p>
+          
+        </div>
       </div>
 )}
       {errorRecipes && <p>Error fetching recipes.</p>}

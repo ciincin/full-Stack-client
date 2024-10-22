@@ -4,12 +4,12 @@ nav{
     position:sticky;
     top: 0;
     overflow: hidden;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 .custom-navbar {
     background-color: var(--beige);
-    border-radius: 75px;
-    margin: 1rem;
+  
 }
 
 .navbar-title{

@@ -1,5 +1,6 @@
 @import url("../../index.css");
-.recipes-scroll-wrapper{
+
+.recipes-scroll-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,11 +9,24 @@
 }
 
 .recipe-scroll-card {
-    width: fit-content;
-background-color: var(--beige);
-padding: 1rem;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    cursor: pointer;
 }
 
-.recipe-scroll-card-img{
-    width: 30vw;
+.recipe-scroll-title, .recipe-scroll-card-img {
+    width: 35vw;
+    color: var(--brown-logo);
+    font-weight: 600;
+}
+.recipes-scroll-info{
+    display:flex;
+    justify-content: space-between;
+    font-size: larger;
+    color: var(--brown-logo);
+}
+
+.recipes-scroll-info-p{
+    margin:0.25rem 0 0 0;
 }
