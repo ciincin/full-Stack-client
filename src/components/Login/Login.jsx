@@ -10,8 +10,7 @@ import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 function Login() {
   const server = import.meta.env.VITE_SERVER_URL;
 
-  const googleId =
-    "445131528162-l6a7p0s8829srhi3gc2sa5vunsm34pp7.apps.googleusercontent.com";
+  const googleId = import.meta.env.VITE_GOOGLE_ID;
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -82,10 +81,6 @@ function Login() {
     setErrorMessage("Google login failed");
   }
 
-  useEffect(() => {
-    console.log(server);
-    console.log("holaaaaaaaaaaa");
-  }, []);
   return (
     <div className="login-wrapper">
       <div className="img-wrapper">
