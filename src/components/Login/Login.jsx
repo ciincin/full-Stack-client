@@ -95,7 +95,7 @@ function Login() {
               src="assets/logo/logo-1200x1200-px.png"
               alt="logo"
             />
-            <Form.Label className="label-login">Login.</Form.Label>
+            <Form.Label className="label-login">Login</Form.Label>
             <Form.Text className="text-muted">
               Please, enter your email and password.
             </Form.Text>

@@ -71,16 +71,19 @@
 .btn-style {
     background-color: var(--orange-logo) !important;
     border-radius: 1rem !important;
-    border: 1px solid rgb(206, 134, 0) !important;
+    border: none !important;
     width: fit-content;
-    padding: 0.5rem 2rem !important;
+    padding: 0.5rem 1rem !important;
     color: var(--beige) !important;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
 }
 
 .btn-style:hover{
     background-color: rgb(209, 134, 0) !important;
 }
+
+
 .google-login {
     width: fit-content !important;
     padding-top: 1rem;

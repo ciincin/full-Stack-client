@@ -1,0 +1,73 @@
+.search-box-wrapper {
+    padding: 1rem;
+}
+
+.btn-wrapper-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+
+}
+
+.btn-wrapper-meal-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.inline {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+}
+
+.input-icon {
+    position: relative;
+    width: fit-content;
+}
+
+.input-field {
+    width: 40rem;
+    padding: 5px;
+    padding-left: 40px;
+    text-align: center;
+    border-radius: 0.5rem;
+    border: 2px solid var(--orange-logo);
+    color: var(--brown-logo)
+}
+
+.btn-style.active {
+    background-color: var(--carolina-blue) !important;
+}
+
+.see-all-wrapper {
+    display: flex;
+    align-items: end;
+}
+
+.btn-all-recipes {
+    border: none;
+    background-color: transparent;
+    color: var(--orange-logo);
+    font-weight: 700;
+}
+
+.input-field:focus {
+    outline: none !important;
+    border: 2px solid var(--orange-logo) !important;
+    box-shadow: 0 0 5px var(--orange-logo) !important;
+
+}
+
+
+.input-icon .bi-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--orange-logo);
+    font-weight: 700 !important;
+}

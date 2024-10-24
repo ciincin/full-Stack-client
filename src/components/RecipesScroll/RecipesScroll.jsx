@@ -1,13 +1,11 @@
-import useFetchRecipes from "../useFetchRecipes/useFetchRecipes";
 import "./RecipesScroll.css";
 
 
-function RecipesCard() {
-  const { recipes, loadingRecipes, errorRecipes } = useFetchRecipes();
+function RecipesScroll({filteredRecipes, loadingRecipes, errorRecipes}) {
   
   return (
     <div className="recipes-scroll-wrapper">
-      {recipes && recipes.map((recipe, index) =>
+      {filteredRecipes && filteredRecipes.map((recipe, index) =>
       <div key={index} className="recipe-scroll-card">
         <h3 className="recipe-scroll-title">{recipe.name}</h3>
         <img className="recipe-scroll-card-img" src={recipe.image} alt={recipe.name}/>
@@ -24,4 +22,4 @@ function RecipesCard() {
   );
 }
 
-export default RecipesCard;
+export default RecipesScroll;
