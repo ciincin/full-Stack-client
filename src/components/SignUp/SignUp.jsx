@@ -76,7 +76,12 @@ function SignUp() {
   return (
     <div className="signup-wrapper">
       <div className="signup-form-wrapper">
-        <Form noValidate onSubmit={handleSubmitAsync}>
+        <Form onSubmit={handleSubmitAsync} className="signup-form">
+          <img
+            className="logo-image-signup"
+            src="assets/logo/logo-1200x1200-px.png"
+            alt="logo"
+          />
           <Form.Label className="label-signup">Sign up</Form.Label>
           <Row className="mb-3">
             <div className="name-wrapper">
@@ -93,6 +98,7 @@ function SignUp() {
                   placeholder="First name"
                   value={firstname}
                   onChange={handleSetFirstname}
+                  required
                 />
               </Form.Group>
               <Form.Group
@@ -108,10 +114,16 @@ function SignUp() {
                   placeholder="Last name"
                   value={lastname}
                   onChange={handleSetLastname}
+                  required
                 />
               </Form.Group>
             </div>
-            <Form.Group as={Col} md="4" controlId="validationFormikUsername2" className="position-relative form-group">
+            <Form.Group
+              as={Col}
+              md="4"
+              controlId="validationFormikUsername2"
+              className="position-relative form-group"
+            >
               <Form.Label className="username-signup">Username</Form.Label>
               <InputGroup hasValidation>
                 <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -122,6 +134,7 @@ function SignUp() {
                   name="username"
                   value={username}
                   onChange={handleSetUsername}
+                  required
                 />
               </InputGroup>
             </Form.Group>
@@ -140,6 +153,7 @@ function SignUp() {
                 name="email"
                 value={email}
                 onChange={handleSetEmail}
+                required
               />
             </Form.Group>
             <Form.Group
@@ -155,6 +169,7 @@ function SignUp() {
                 name="password"
                 value={password}
                 onChange={handleSetPassword}
+                required
               />
             </Form.Group>
           </Row>
@@ -170,13 +185,17 @@ function SignUp() {
               feedbackTooltip
             />
           </Form.Group>
-          <Button className="btn-register" type="submit">Register</Button>
+          <div className="btn-register-wrapper">
+            <Button className="btn-register" type="submit">
+              Register
+            </Button>
+          </div>
         </Form>
       </div>
       <div className="signup-img-wrapper">
         <img src="assets/background/photo-signup.jpg" />
       </div>
-      {message && <p>{message}</p>}
+      {message && <alert>{message}</alert>}
     </div>
   );
 }

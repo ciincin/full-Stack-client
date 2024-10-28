@@ -1,9 +1,9 @@
 @import url("../../index.css");
 
-.signup-wrapper{
+.signup-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 20vw;
+    justify-content: center;
 
 }
 
@@ -15,52 +15,81 @@
     /* Asegura que la imagen mantenga sus proporciones y se recorte si es necesario */
 }
 
-.signup-form-wrapper{
+.signup-form-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20rem;
-    
+    align-items: center;
+    width: 60vw;
+
 }
 
-.label-signup{
+.signup-form {
+    width: 40vw;
+}
+
+.logo-image-signup {
+    display: block;
+    margin: 0 auto;
+    max-width: 12vW;
+}
+
+.label-signup {
     display: flex;
     justify-content: center;
     font-weight: 700;
     font-size: 2.5rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
-.name-wrapper{
+.name-wrapper {
     display: flex;
-    gap:1.5rem;
+    gap: 1.5rem;
 }
 
 .name-wrapper .form-group {
-    flex: 1; /* Permite que los grupos de formularios ocupen el mismo espacio */
+    flex: 1;
+    /* Permite que los grupos de formularios ocupen el mismo espacio */
 }
 
 .signup-form-wrapper .form-control {
-    width: 100%; /* Asegura que el input ocupe el 100% del ancho disponible */
+    width: 100%;
+    /* Asegura que el input ocupe el 100% del ancho disponible */
+}
+
+.signup-form-wrapper .form-control:focus {
+    outline: none !important;
+    border: 2px solid var(--orange-logo) !important;
+    box-shadow: 0 0 5px var(--orange-logo) !important;
 }
 
 .signup-form-wrapper .form-group {
-    flex: 1; /* Permite que cada grupo de formularios ocupe el mismo espacio */
+    flex: 1;
+    /* Permite que cada grupo de formularios ocupe el mismo espacio */
 }
 
-.username-signup{
+.username-signup {
     padding-top: 1rem;
 }
 
-.btn-register{
-    background-color: var(--orange-logo) !important;
-    border-radius: 1rem !important;
-    border: 1px solid rgb(206, 134, 0) !important;
-    padding: 0.5rem 2rem !important;
-    color: var(--beige) !important;
-    font-weight: 600 !important;
+.btn-register-wrapper {
+    text-align: center !important;
+    width: 100% !important;
 }
 
-.btn-register:hover{
+.btn-register {
+    background-color: var(--orange-logo) !important;
+    border-radius: 1rem !important;
+    border: none !important;
+    width: fit-content;
+    padding: 0.5rem 1rem !important;
+    color: var(--beige) !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    align-self: center !important;
+    /* Centra solo el botón */
+}
+
+.btn-register:hover {
     background-color: rgb(209, 134, 0) !important;
 }

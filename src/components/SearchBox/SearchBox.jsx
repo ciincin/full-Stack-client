@@ -58,6 +58,7 @@ function SearchBox() {
   function handleSeeAllRecipes(){
     setFilteredRecipes(recipes)
     setActiveMealType("")
+    setSearchInput("")
   }
 
   return (
@@ -77,7 +78,7 @@ function SearchBox() {
         <p>No meal type found</p>
       )}
 
-      <form className="inline" onSubmit={handleSubmit}>
+      <div className="inline">
         <div className="input-icon">
           <i className="bi bi-search"></i>
           <input
@@ -89,7 +90,7 @@ function SearchBox() {
           />
         </div>
         <div className="see-all-wrapper"><button onClick={handleSeeAllRecipes} className={`btn-all-recipes`}>See all recipes</button></div>
-      </form>
+      </div>
 
       {filteredRecipes.length===0 && !loadingRecipes && !errorRecipes && (
         <p>No recipes found</p>

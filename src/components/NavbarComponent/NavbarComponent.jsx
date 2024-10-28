@@ -9,7 +9,7 @@ function NavbarComponent() {
       <Navbar expand="lg" className="custom-navbar">
         <Container>
           <Navbar.Brand href="#home">
-            <img src="assets/logo/logo-navbar.png" width={200} alt="logo" />
+            <img src={`/assets/logo/logo-navbar.png`} width={200} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -17,7 +17,7 @@ function NavbarComponent() {
               <Nav.Link className="navbar-title" href="/">
                 Home
               </Nav.Link>
-              <Nav.Link className="navbar-title" href="/signup">
+              <Nav.Link className="navbar-title" href="/profile">
                 Recipes
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/signup">

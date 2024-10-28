@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./views/Home/Home";
 import Register from "./views/Register/Register";
 import Profile from "./views/Profile/Profile";
-
+import RecipePage from "./views/RecipePage/RecipePage";
 function App() {
+
   return (
     <div className="app-container">
       <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Register />} />
             <Route path="/profile" element={<Profile/>}/>
+            <Route path="/recipe/:id" element={<RecipePage />}/>
           </Routes>
         </div>
       </BrowserRouter>
