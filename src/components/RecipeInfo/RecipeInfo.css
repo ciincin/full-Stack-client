@@ -1,3 +1,90 @@
-.recipe-page-wrapper{
+@import url("../../index.css");
+
+.recipe-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
+    color: var(--brown-logo);
+}
+
+.title-photo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
+
+.title-heart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.title-recipe {
+    font-weight: 600;
+}
+
+.bi-heart {
+    color: var(--orange-logo);
+    font-size: x-large !important;
+}
+
+.photo-recipe,
+.title-heart-wrapper {
+    width: 40vw;
+    padding-top: 1rem;
+
+}
+
+.info-wrapper {
+    font-size: large;
+    font-weight: 500;
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.info-wrapper p {
+    margin: 0;
+    background-color: var(--orange-logo);
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    color: var(--beige);
+    font-weight: 600;
+}
+
+
+.recipe-tags {
+    text-align: center;
+}
+
+.ingredients-instructions-wrapper {
+    display: flex;
+    padding: 1rem 0;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.recipe-ingredients{
+    color:var(--dark-slate-gray);
+    font-size: large;
+    background-color: var(--carolina-blue);
+    padding: 1rem;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para el efecto flotante */
+    transform: rotate(-2deg); /* Rotación ligera para parecer más natural */
+    position: relative;
+    font-weight: 500;
+}
+
+
+.ingredients{
+    font-weight: 800;
 }

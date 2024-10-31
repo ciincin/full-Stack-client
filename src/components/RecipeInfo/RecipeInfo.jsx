@@ -11,31 +11,50 @@ function RecipeInfo({ recipes }) {
 
   return (
     <div className="recipe-page-wrapper">
-      <h1>{recipe.name}</h1>
-      <img src={recipe.image} alt={recipe.name} />
-      <p>Rating: {recipe.rating} ★</p>
-      <p>Reviews: {recipe.reviewCount}</p>
-      <p>Type of food: {recipe.cuisine}</p>
-      <p>Dificulty: {recipe.dificulty}</p>
-      <p>Servings: {recipe.servings}</p>
-      <p>Calories: {recipe.calories}</p>
-      <p>Preparation time: {recipe.prepTimeMinutes} min</p>
-      <p>Cooking time: {recipe.cookTimeMinutes} min</p>
-      <p>Ingredients:</p>
-      <ul>
-        {recipe.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
+      <div className="title-photo-wrapper">
+        <div className="title-heart-wrapper">
+          <h1 className="title-recipe">{recipe.name}</h1>
+          <i class="bi bi-heart"></i>
+        </div>
+        <img className="photo-recipe" src={recipe.image} alt={recipe.name} />
+      </div>
+      <div className="info-wrapper">
+        <p>
+          {recipe.rating} ★ ({recipe.reviewCount})
+        </p>
+        <p className="recipes-scroll-info-p">
+          <i className="bi bi-clock"></i>{" "}
+          {recipe.prepTimeMinutes + recipe.cookTimeMinutes} min{" "}
+        </p>
+        <p>{recipe.cuisine}</p>
+        <p>{recipe.difficulty}</p>
+        <p>
+          {" "}
+          <i class="bi bi-people"></i> {recipe.servings}
+        </p>
+        {recipe.mealType.map((mealType, index) => (
+          <p key={index}>{mealType}</p>
         ))}
-      </ul>
-      <p>Instructions</p>
-      <ol>
-        {recipe.instructions.map((instruction, index) => (
-          <li key={index}>{instruction}</li>
-        ))}
-      </ol>
-      {recipe.mealType.map((mealType, index)=>(
-        <div key={index}>{mealType}</div>
-      ))}
+      </div>
+
+      <div className="ingredients-instructions-wrapper">
+        <div className="recipe-ingredients">
+          <p className="ingredients">Ingredients:</p>
+          <ul>
+            {recipe.ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="recipe-instructions">
+          <p>How to make {recipe.name}</p>
+          <ol>
+            {recipe.instructions.map((instruction, index) => (
+              <li key={index}>{instruction}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </div>
   );
 }
