@@ -69,26 +69,34 @@
     display: flex;
     padding: 1rem 0;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
 
 }
 
-.recipe-ingredients{
-    color:var(--dark-slate-gray);
+.recipe-ingredients {
+    color: var(--dark-slate-gray);
     font-size: large;
     background-color: var(--carolina-blue);
     padding: 1rem;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para el efecto flotante */
-    transform: rotate(-2deg); /* Rotación ligera para parecer más natural */
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    /* Sombra para el efecto flotante */
+    transform: rotate(-2deg);
+    /* Rotación ligera para parecer más natural */
     position: relative;
     font-weight: 500;
 }
 
+.title-instructions{
+ font-weight: 600;
+}
 
-.ingredients{
+.ingredients {
     font-weight: 800;
 }
 
-.ol{
+.ol {
     font-size: large;
 }

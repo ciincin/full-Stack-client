@@ -15,7 +15,7 @@ function NavbarComponent() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link className="navbar-title" href="/">
-                Home
+                Login
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/profile">
                 Recipes
@@ -24,7 +24,7 @@ function NavbarComponent() {
                 Favorites
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/signup">
-                Share a recipe
+                Signup
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -47,7 +47,7 @@ function RecipeInfo({ recipes }) {
           </ul>
         </div>
         <div className="recipe-instructions">
-          <h4>How to make {recipe.name}</h4>
+          <h4 className="title-instructions">How to make {recipe.name}</h4>
           <ol className="ol">
             {recipe.instructions.map((instruction, index) => (
               <li key={index}>{instruction}</li>

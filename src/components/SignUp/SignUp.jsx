@@ -6,6 +6,9 @@ import Row from "react-bootstrap/Row";
 import "./SignUp.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function SignUp() {
   const server = import.meta.env.VITE_SERVER_URL;
@@ -63,13 +66,27 @@ function SignUp() {
       const data = await response.json();
 
       if (response.ok) {
-        navigate("/");
+        toast.success("Registration successful!", {
+          position:"top-center",
+          autoClose: false, // Evita el cierre automático
+          closeOnClick: true, // Permite cerrar haciendo clic en el toast
+          theme: "colored",
+          hideProgressBar:true,
+          onClose: ()=>navigate("/"),
+          style:{
+            backgroundColor:'#ef9b1d',
+            color:"white",
+            fontWeight:"bold",
+            padding:"20px",
+          }
+        })
       } else {
         setMessage(`Signup failled: ${data.msg}`);
       }
     } catch (error) {
       console.error("Error:", error);
       setMessage("An error occurred. Please, try again.");
+      toast.error('Error registering user');
     }
   }
 
@@ -195,6 +212,7 @@ function SignUp() {
       <div className="signup-img-wrapper">
         <img src="assets/background/photo-signup.jpg" />
       </div>
+      <ToastContainer />
       {message && <alert>{message}</alert>}
     </div>
   );
