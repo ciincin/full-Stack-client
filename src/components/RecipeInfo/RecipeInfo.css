@@ -23,13 +23,14 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 0 1rem;
 }
 
 .title-recipe {
     font-weight: 600;
 }
 
-.bi-heart {
+.bi-heart, .bi-heart-fill {
     color: var(--orange-logo);
     font-size: x-large !important;
 }
