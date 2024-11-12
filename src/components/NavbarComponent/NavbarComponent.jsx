@@ -8,7 +8,7 @@ function NavbarComponent() {
     <nav>
       <Navbar expand="lg" className="custom-navbar">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/profile">
             <img src={`/assets/logo/logo-navbar.png`} width={200} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -20,7 +20,7 @@ function NavbarComponent() {
               <Nav.Link className="navbar-title" href="/profile">
                 Recipes
               </Nav.Link>
-              <Nav.Link className="navbar-title" href="/signup">
+              <Nav.Link className="navbar-title" href="/favorites">
                 Favorites
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/signup">

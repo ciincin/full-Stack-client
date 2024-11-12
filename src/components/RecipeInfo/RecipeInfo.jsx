@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import "./RecipeInfo.css";
 
-function RecipeInfo({ recipes }) {
+function RecipeInfo({ recipes, toggleFavorite, isFavorite }) {
   const { id } = useParams();
   const recipe = recipes.find((recipe) => recipe.id === parseInt(id, 10));
 
@@ -14,7 +14,8 @@ function RecipeInfo({ recipes }) {
       <div className="title-photo-wrapper">
         <div className="title-heart-wrapper">
           <h1 className="title-recipe">{recipe.name}</h1>
-          <i class="bi bi-heart"></i>
+          <i className={`bi ${isFavorite(recipe.id)? "bi-heart-fill": "bi-heart"}`}
+          onClick={()=> toggleFavorite(recipe.id)}></i>
         </div>
         <img className="photo-recipe" src={recipe.image} alt={recipe.name} />
       </div>
@@ -30,7 +31,7 @@ function RecipeInfo({ recipes }) {
         <p>{recipe.difficulty}</p>
         <p>
           {" "}
-          <i class="bi bi-people"></i> {recipe.servings}
+          <i className="bi bi-people"></i> {recipe.servings}
         </p>
         {recipe.mealType.map((mealType, index) => (
           <p key={index}>{mealType}</p>
