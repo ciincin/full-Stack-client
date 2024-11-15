@@ -2,8 +2,29 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./NavbarComponent.css";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+
+function isLoggedIn(){
+  return document.cookie.includes("token=")
+}
 
 function NavbarComponent() {
+
+  const [LoggedIn, setLoggedIn]= useState("token=")
+
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    setLoggedIn(isLoggedIn())
+  },[])
+
+  function handleLogout(){
+    document.cookie = "token=; path=/; max-age=0"
+    setLoggedIn(false)
+    navigate("/")
+  }
   return (
     <nav>
       <Navbar expand="lg" className="custom-navbar">
@@ -25,6 +46,9 @@ function NavbarComponent() {
               </Nav.Link>
               <Nav.Link className="navbar-title" href="/signup">
                 Signup
+              </Nav.Link>
+              <Nav.Link className="navbar-title" onClick={handleLogout}>
+                Logout
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

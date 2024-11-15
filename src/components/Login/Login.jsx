@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Alert from "react-bootstrap/Alert";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

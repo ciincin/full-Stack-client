@@ -1,0 +1,47 @@
+@import url("../../index.css");
+
+
+.favorite-container{
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--ligth-grey);
+}
+
+.small-photo-recipe{
+    width: 10vw;
+    height: auto;
+
+}
+
+.favorite-info-img-photo-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.favorite-title-photo-wrapper{
+    display: flex;
+    gap: 1rem;
+   
+
+}
+
+.favorite-info-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    font-weight: 500;
+    padding: 1rem 0;
+
+}
+
+.favorite-info-wrapper p {
+    margin: 0;
+    background-color: var(--orange-logo);
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    color: var(--beige);
+    font-weight: 600;
+
+}
