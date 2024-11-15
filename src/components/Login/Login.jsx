@@ -44,14 +44,12 @@ function Login() {
       if (!response || !response.data) {
         setErrorMessage("login failed: data no received");
       } else {
-        navigate("/profile")
+        navigate("/profile");
       }
     } catch (error) {
       setErrorMessage(error.response?.data?.msg || "An error occurred");
     }
   }
-
-
 
   async function handleGoogleLoginSuccess(credentialResponse) {
     try {
@@ -82,69 +80,70 @@ function Login() {
   }
 
   return (
-    <div className="login-wrapper">
-      <div className="img-wrapper">
-        <img src="assets/background/cake.jpg" />
-      </div>
+    <div>
+      {errorMessage && <Alert className="alert-msg" variant="danger">{errorMessage}</Alert>}
 
-      <Form className="form-wrapper" onSubmit={handleLogin}>
-        <Form.Group className="mb-3-wrapper" controlId="formBasicEmail">
-          <div className="login-title-wrapper">
-            <img
-              className="logo-image"
-              src="assets/logo/logo-1200x1200-px.png"
-              alt="logo"
-            />
-            <Form.Label className="label-login">Login</Form.Label>
-            <Form.Text className="text-muted">
-              Please, enter your email and password.
-            </Form.Text>
-          </div>
-          <Form.Control
-            className="input-style"
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={handleSetEmail}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control
-            className="input-style"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={handleSetPassword}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Remember me" />
-        </Form.Group>
-        <div className="btn-wrapper">
-          <Button variant="primary" type="submit" className="btn-style">
-            Submit
-          </Button>
-          <div className="google-login">
-            <GoogleOAuthProvider clientId={googleId}>
-              <GoogleLogin
-                className="input-style"
-                onSuccess={handleGoogleLoginSuccess}
-                onError={handleGoogleLoginError}
+      <div className="login-wrapper">
+        <div className="img-wrapper">
+          <img src="assets/background/cake.jpg" />
+        </div>
+        <Form className="form-wrapper" onSubmit={handleLogin}>
+          <Form.Group className="mb-3-wrapper" controlId="formBasicEmail">
+            <div className="login-title-wrapper">
+              <img
+                className="logo-image"
+                src="assets/logo/logo-1200x1200-px.png"
+                alt="logo"
               />
-            </GoogleOAuthProvider>
+              <Form.Label className="label-login">Login</Form.Label>
+              <Form.Text className="text-muted">
+                Please, enter your email and password.
+              </Form.Text>
+            </div>
+            <Form.Control
+              className="input-style"
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={handleSetEmail}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control
+              className="input-style"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={handleSetPassword}
+              required
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Remember me" />
+          </Form.Group>
+          <div className="btn-wrapper">
+            <Button variant="primary" type="submit" className="btn-style">
+              Submit
+            </Button>
+            <div className="google-login">
+              <GoogleOAuthProvider clientId={googleId}>
+                <GoogleLogin
+                  className="input-style"
+                  onSuccess={handleGoogleLoginSuccess}
+                  onError={handleGoogleLoginError}
+                />
+              </GoogleOAuthProvider>
+            </div>
           </div>
-        </div>
-        <div className="register">
-          Are you not registered?{" "}
-          <a className="register-a" href="/signup">
-            Register now
-          </a>
-        </div>
-      </Form>
-
-      {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
+          <div className="register">
+            Are you not registered?{" "}
+            <a className="register-a" href="/signup">
+              Register now
+            </a>
+          </div>
+        </Form>
+      </div>
     </div>
   );
 }
